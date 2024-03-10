@@ -1,0 +1,113 @@
+{
+  "version": "5",
+  "dialect": "sqlite",
+  "id": "a928168c-5ae7-4df0-94db-6e0e75b737e7",
+  "prevId": "00000000-0000-0000-0000-000000000000",
+  "tables": {
+    "table_a": {
+      "name": "table_a",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "text",
+          "primaryKey": true,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "column_a": {
+          "name": "column_a",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "column_b": {
+          "name": "column_b",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "created_at": {
+          "name": "created_at",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false,
+          "default": "CURRENT_TIMESTAMP"
+        }
+      },
+      "indexes": {
+        "table_a_column_a_unique": {
+          "name": "table_a_column_a_unique",
+          "columns": [
+            "column_a"
+          ],
+          "isUnique": true
+        }
+      },
+      "foreignKeys": {},
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {}
+    },
+    "table_b": {
+      "name": "table_b",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "text",
+          "primaryKey": true,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "antable_a_idime_id": {
+          "name": "antable_a_idime_id",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "created_at": {
+          "name": "created_at",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false,
+          "default": "CURRENT_TIMESTAMP"
+        }
+      },
+      "indexes": {
+        "table_b_antable_a_idime_id_unique": {
+          "name": "table_b_antable_a_idime_id_unique",
+          "columns": [
+            "antable_a_idime_id"
+          ],
+          "isUnique": true
+        }
+      },
+      "foreignKeys": {
+        "table_b_antable_a_idime_id_table_a_id_fk": {
+          "name": "table_b_antable_a_idime_id_table_a_id_fk",
+          "tableFrom": "table_b",
+          "tableTo": "table_a",
+          "columnsFrom": [
+            "antable_a_idime_id"
+          ],
+          "columnsTo": [
+            "id"
+          ],
+          "onDelete": "no action",
+          "onUpdate": "no action"
+        }
+      },
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {}
+    }
+  },
+  "enums": {},
+  "_meta": {
+    "schemas": {},
+    "tables": {},
+    "columns": {}
+  }
+}
